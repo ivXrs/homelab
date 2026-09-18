@@ -70,17 +70,17 @@ Configuración y documentación del homelab que tengo montado en casa. Es un ent
         <td>Menú interactivo y panel web para gestionar y configurar Proxmox VE de forma sencilla</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://simpleicons.org/icons/tailscale.svg"></td>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tailscale-light.svg"></td>
         <td><a href="https://tailscale.com/">Tailscale</a></td>
         <td>Red privada de acceso remoto (VPN mesh) basada en WireGuard para conectarme al homelab desde fuera de casa</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://simpleicons.org/icons/pihole.svg"></td>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pi-hole.svg"></td>
         <td><a href="https://pi-hole.net/">Pi-hole</a></td>
         <td>Servidor DNS local que bloquea publicidad y rastreadores a nivel de red</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://simpleicons.org/icons/nginxproxymanager.svg"></td>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nginx-proxy-manager.svg"></td>
         <td><a href="https://nginxproxymanager.com/">Nginx Proxy Manager</a></td>
         <td>Proxy inverso con interfaz web para gestionar dominios, subdominios y certificados SSL de los servicios internos</td>
     </tr>
