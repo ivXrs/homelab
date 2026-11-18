@@ -1,0 +1,139 @@
+/* Homelab docs: custom look and motion. Vanilla CSS, no external deps. */
+
+:root {
+  --hl-grad-a: #4f46e5;
+  --hl-grad-b: #06b6d4;
+  --hl-grad-c: #10b981;
+  --hl-shadow: 0 10px 30px -12px rgba(79, 70, 229, 0.35);
+}
+
+[data-md-color-scheme="slate"] {
+  --hl-grad-a: #818cf8;
+  --hl-grad-b: #22d3ee;
+  --hl-grad-c: #34d399;
+  --hl-shadow: 0 12px 32px -14px rgba(34, 211, 238, 0.35);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.hero .hero__title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(2.6rem, 8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  background: linear-gradient(100deg, var(--hl-grad-a), var(--hl-grad-b), var(--hl-grad-c), var(--hl-grad-a));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* No permalink anchor (¶) on the hero title */
+.hero .hero__title .headerlink {
+  display: none;
+}
+
+.hero__lead {
+  max-width: 40rem;
+  font-size: 1.05rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.hero .md-button {
+  margin: 0.4rem 0.4rem 0 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero .md-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hl-shadow);
+}
+
+/* ---------- Cards, images, tables ---------- */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 0.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--hl-shadow);
+  border-color: var(--md-accent-fg-color);
+}
+
+.md-typeset img.reveal {
+  border-radius: 0.8rem;
+  box-shadow: var(--hl-shadow);
+}
+
+/* ---------- Motion (only when motion is allowed) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero .hero__title,
+  .hero__lead,
+  .hero .md-button {
+    opacity: 0;
+    animation: hl-slide-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+
+  .hero .hero__title {
+    animation: hl-slide-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.08s forwards,
+               hl-gradient 8s linear infinite;
+  }
+
+  .hero__lead { animation-delay: 0.2s; }
+  .hero .md-button { animation-delay: 0.32s; }
+
+  .hl-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--hl-delay, 0ms);
+  }
+  .hl-reveal.hl-in {
+    opacity: 1;
+    transform: none;
+  }
+  img.hl-reveal { transform: scale(0.96) translateY(12px); }
+  img.hl-reveal.hl-in { transform: none; }
+
+  /* Cards keep their hover lift once revealed */
+  .md-typeset .grid.cards > ul > li.hl-reveal.hl-in {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition-delay: 0ms;
+  }
+  .md-typeset .grid.cards > ul > li.hl-reveal.hl-in:hover { transform: translateY(-4px); }
+
+  .md-typeset table.hl-reveal tbody tr {
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    transition-delay: calc(var(--row, 0) * 45ms + 120ms);
+  }
+  .md-typeset table.hl-reveal.hl-in tbody tr {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hl-slide-in {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes hl-gradient {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

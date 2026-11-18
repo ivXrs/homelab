@@ -1,0 +1,98 @@
+# Zensical config (es). Built into site/es/ by scripts/build.py
+[project]
+site_name = "Homelab"
+site_description = "Configuración y documentación de mi laboratorio doméstico"
+site_url = "https://ivxrs.github.io/homelab/es/"
+docs_dir = "docs_es"
+site_dir = "site/es"
+repo_url = "https://github.com/ivXrs/homelab"
+repo_name = "ivXrs/homelab"
+copyright = "Documentación del homelab"
+extra_css = ["assets/css/extra.css"]
+extra_javascript = ["assets/js/extra.js"]
+nav = [
+  { "Inicio" = "index.md" },
+  { "Hardware" = "hardware.md" },
+  { "Servicios" = "services.md" },
+]
+
+[project.theme]
+language = "es"
+font = false
+features = [
+  "content.code.annotate",
+  "content.code.copy",
+  "content.tabs.link",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.path",
+  "navigation.tabs",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
+]
+
+[project.theme.icon]
+logo = "lucide/server"
+repo = "fontawesome/brands/github"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+primary = "indigo"
+accent = "teal"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Cambiar a modo claro"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "indigo"
+accent = "teal"
+toggle.icon = "lucide/sun"
+toggle.name = "Cambiar a modo oscuro"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "indigo"
+accent = "teal"
+toggle.icon = "lucide/moon"
+toggle.name = "Cambiar a preferencia del sistema"
+
+[[project.extra.alternate]]
+name = "English"
+link = "/homelab/en/"
+lang = "en"
+
+[[project.extra.alternate]]
+name = "Español"
+link = "/homelab/es/"
+lang = "es"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc.permalink = true
+pymdownx.betterem = {}
+pymdownx.details = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+pymdownx.tabbed.alternate_style = true
+pymdownx.tasklist.custom_checkbox = true
