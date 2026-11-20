@@ -10,7 +10,6 @@ These are the services currently running in the lab:
 
 | Name | Description |
 |---|---|
-| [ProxMenux](https://proxmenux.com/) | Interactive menu and web dashboard to manage and configure Proxmox VE easily |
 | [Tailscale](https://tailscale.com/) | Private remote access network (WireGuard-based mesh VPN) to connect to the homelab from outside the house |
 | [Pi-hole](https://pi-hole.net/) | Local DNS server that blocks ads and trackers at the network level |
 | [Nginx Proxy Manager](https://nginxproxymanager.com/) | Reverse proxy with a web interface to manage domains, subdomains, and SSL certificates for internal services |
